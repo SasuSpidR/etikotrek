@@ -355,6 +355,11 @@ body {
     image-rendering: crisp-edges;
 }
 
+.day-image img[src*="comus"] {
+    object-fit: contain;
+    background: var(--light-color);
+}
+
 .day-card:hover .day-image img {
     transform: scale(1.05);
 }

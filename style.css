@@ -176,35 +176,47 @@ body {
 
 .hero-tag {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero-title {
     font-family: 'Epilogue', sans-serif;
-    font-size: 4rem;
+    font-size: 5.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.1;
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
     font-style: italic;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     opacity: 0.95;
+    letter-spacing: -0.01em;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-    opacity: 0.9;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-cta {
@@ -216,7 +228,7 @@ body {
 
 /* Introduction */
 .intro {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface);
 }
 
@@ -227,23 +239,26 @@ body {
 
 .intro h2 {
     font-family: 'Epilogue', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .intro-with-image {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 4rem;
     align-items: center;
+    position: relative;
 }
 
 .intro-text-content {
     text-align: left;
+    padding-right: 2rem;
 }
 
 .intro-text {
@@ -253,24 +268,29 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.intro-image {
+    position: relative;
+    margin-right: -5rem;
+}
+
 .intro-image img {
-    width: 100%;
-    height: 400px;
+    width: 120%;
+    height: 500px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 32px rgba(22, 29, 27, 0.15);
 }
 
 /* Galerie */
 .galerie {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface-container-low);
 }
 
 .galerie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .galerie-item {
@@ -314,58 +334,63 @@ body {
     margin: 0;
 }
 
-/* Section Titles */
+/* Section Titles - Alpine Editorial Style */
 .section-title {
     font-family: 'Epilogue', sans-serif;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 3rem;
-    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-top: 6rem;
     position: relative;
-    padding-bottom: 1rem;
-    letter-spacing: -0.01em;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--accent-color);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 /* Programme */
 .programme {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface-container-low);
 }
 
 .programme-grid {
     display: grid;
-    gap: 2rem;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .day-card {
     background: var(--surface-container-lowest);
     border-radius: 0.5rem;
-    overflow: hidden;
-    border: 1px solid rgba(193, 200, 195, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: visible;
+    transition: transform 0.3s;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 0;
+}
+
+.day-card:nth-child(even) {
+    grid-template-columns: 1fr 400px;
+}
+
+.day-card:nth-child(even) .day-image {
+    order: 2;
+}
+
+.day-card:nth-child(even) .day-content {
+    order: 1;
 }
 
 .day-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(22, 29, 27, 0.05);
+    transform: translateY(-3px);
 }
 
 .day-image {
     width: 100%;
-    height: 250px;
+    height: 100%;
+    min-height: 350px;
     overflow: hidden;
     position: relative;
 }
@@ -377,31 +402,43 @@ body {
     transition: transform 0.5s ease;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.day-card:nth-child(even) .day-image img {
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .day-card:hover .day-image img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .day-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-container));
-    color: var(--white);
-    padding: 2rem;
-    text-align: center;
+    background: transparent;
+    color: var(--on-surface);
+    padding: 2.5rem 2.5rem 1rem 2.5rem;
+    text-align: left;
 }
 
 .day-number {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    background: transparent;
+    padding: 0;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tertiary-color);
+    margin-bottom: 0.75rem;
 }
 
 .day-header h3 {
-    font-size: 1.8rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
     margin: 0.5rem 0;
+    letter-spacing: -0.01em;
+    color: var(--primary-color);
 }
 
 .day-tagline {
@@ -411,7 +448,13 @@ body {
 }
 
 .day-content {
-    padding: 2rem;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+    background: var(--surface-container-lowest);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.day-card:nth-child(even) .day-content {
+    border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .day-activity {
@@ -427,14 +470,18 @@ body {
 }
 
 .day-activity strong {
+    font-family: 'Work Sans', sans-serif;
     color: var(--primary-color);
     display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .day-activity p {
+    font-family: 'Work Sans', sans-serif;
     color: var(--text-light);
     margin-top: 0.25rem;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
 }
 
 .day-description {
@@ -459,27 +506,30 @@ body {
 }
 
 .info-badge {
-    background: var(--light-color);
+    background: var(--surface-container-high);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Guides */
 .guides {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface);
 }
 
 .guides-intro {
     text-align: center;
-    font-size: 1.2rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
     color: var(--text-light);
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    line-height: 1.6;
     font-style: italic;
 }
 
@@ -492,8 +542,7 @@ body {
 .guide-card {
     background: var(--surface-container-lowest);
     border-radius: 0.5rem;
-    padding: 2rem;
-    border: 1px solid rgba(193, 200, 195, 0.2);
+    padding: 3rem;
 }
 
 .guide-content h3 {
@@ -524,7 +573,7 @@ body {
 
 /* Tarifs */
 .tarifs {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface-container-low);
 }
 
@@ -541,20 +590,19 @@ body {
 .tarif-card {
     background: var(--surface-container-lowest);
     border-radius: 0.5rem;
-    padding: 2rem;
-    border: 1px solid rgba(193, 200, 195, 0.2);
+    padding: 3rem;
     text-align: center;
     position: relative;
     transition: transform 0.3s;
 }
 
 .tarif-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .tarif-card.featured {
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 16px rgba(242, 112, 54, 0.1);
+    background: linear-gradient(135deg, rgba(242, 112, 54, 0.05), rgba(166, 59, 0, 0.05));
+    box-shadow: 0 8px 32px rgba(242, 112, 54, 0.1);
 }
 
 .badge-popular {
@@ -676,7 +724,7 @@ body {
 
 /* Qualité */
 .qualite {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface);
 }
 
@@ -688,10 +736,9 @@ body {
 
 .qualite-card {
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem;
     background: var(--surface-container-lowest);
     border-radius: 0.5rem;
-    border: 1px solid rgba(193, 200, 195, 0.2);
 }
 
 .qualite-card h3 {
@@ -707,7 +754,7 @@ body {
 
 /* Agence */
 .agence {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: var(--surface-container-low);
 }
 
@@ -738,15 +785,19 @@ body {
 
 /* CTA Final */
 .cta-final {
-    padding: 5rem 0;
+    padding: 8rem 0;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-container));
     color: var(--white);
     text-align: center;
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .cta-content p {
@@ -755,9 +806,11 @@ body {
 }
 
 .cta-date {
-    font-size: 1.5rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.75rem;
     font-weight: 600;
-    margin: 2rem 0;
+    margin: 2rem 0 3rem 0;
+    letter-spacing: -0.01em;
 }
 
 .cta-buttons {

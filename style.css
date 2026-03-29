@@ -6,13 +6,27 @@
 }
 
 :root {
-    --primary-color: #3d6b2e;
-    --secondary-color: #c9a46d;
-    --dark-color: #1f3a1a;
-    --light-color: #f0e6d2;
-    --accent-color: #6b7c3a;
-    --text-dark: #333;
-    --text-light: #666;
+    /* Alpine Editorial Design System */
+    --primary-color: #571b00;
+    --primary-container: #7c2a00;
+    --secondary-color: #2D4B3F;
+    --secondary-container: #c5e7d7;
+    --tertiary-color: #8C6A50;
+    --tertiary-container: #5c3f28;
+    --accent-color: #F27036;
+    --surface-tint: #a63b00;
+    --background: #f4fbf8;
+    --surface: #f4fbf8;
+    --surface-container-low: #eef5f2;
+    --surface-container: #e9efec;
+    --surface-container-high: #e3eae7;
+    --surface-container-highest: #dde4e1;
+    --surface-container-lowest: #ffffff;
+    --on-surface: #161d1b;
+    --on-primary: #ffffff;
+    --outline-variant: #c1c8c3;
+    --text-dark: #161d1b;
+    --text-light: #414845;
     --white: #ffffff;
 }
 
@@ -21,9 +35,10 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    background: var(--background);
 }
 
 .container {
@@ -32,15 +47,15 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* Header - Glassmorphism */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(244, 251, 248, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(193, 200, 195, 0.15);
     z-index: 1000;
 }
 
@@ -77,24 +92,25 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: var(--white);
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
 }
 
 .btn-primary:hover {
-    background: var(--dark-color);
+    background: var(--surface-tint);
     color: var(--white) !important;
+    transform: translateY(-1px);
 }
 
 .btn-hero {
     display: inline-block;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--surface-tint));
     color: var(--white);
     padding: 1rem 2.5rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -102,9 +118,9 @@ body {
 }
 
 .btn-hero:hover {
-    background: var(--dark-color);
+    background: linear-gradient(135deg, var(--surface-tint), var(--accent-color));
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(61, 107, 46, 0.3);
+    box-shadow: 0 8px 32px rgba(242, 112, 54, 0.3);
 }
 
 .btn-secondary {
@@ -169,10 +185,11 @@ body {
 }
 
 .hero-title {
+    font-family: 'Epilogue', sans-serif;
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: -0.02em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -200,7 +217,7 @@ body {
 /* Introduction */
 .intro {
     padding: 5rem 0;
-    background: var(--white);
+    background: var(--surface);
 }
 
 .intro-content {
@@ -209,10 +226,13 @@ body {
 }
 
 .intro h2 {
+    font-family: 'Epilogue', sans-serif;
     font-size: 2.5rem;
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 2rem;
     text-align: center;
+    letter-spacing: -0.01em;
 }
 
 .intro-with-image {
@@ -244,7 +264,7 @@ body {
 /* Galerie */
 .galerie {
     padding: 5rem 0;
-    background: var(--light-color);
+    background: var(--surface-container-low);
 }
 
 .galerie-grid {
@@ -296,12 +316,16 @@ body {
 
 /* Section Titles */
 .section-title {
+    font-family: 'Epilogue', sans-serif;
     text-align: center;
     font-size: 2.5rem;
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 3rem;
+    margin-top: 4rem;
     position: relative;
     padding-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .section-title::after {
@@ -318,7 +342,7 @@ body {
 /* Programme */
 .programme {
     padding: 5rem 0;
-    background: var(--light-color);
+    background: var(--surface-container-low);
 }
 
 .programme-grid {
@@ -327,16 +351,16 @@ body {
 }
 
 .day-card {
-    background: var(--white);
-    border-radius: 10px;
+    background: var(--surface-container-lowest);
+    border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(193, 200, 195, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .day-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(22, 29, 27, 0.05);
 }
 
 .day-image {
@@ -360,7 +384,7 @@ body {
 }
 
 .day-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-container));
     color: var(--white);
     padding: 2rem;
     text-align: center;
@@ -446,7 +470,7 @@ body {
 /* Guides */
 .guides {
     padding: 5rem 0;
-    background: var(--white);
+    background: var(--surface);
 }
 
 .guides-intro {
@@ -466,21 +490,23 @@ body {
 }
 
 .guide-card {
-    background: var(--light-color);
-    border-radius: 10px;
+    background: var(--surface-container-lowest);
+    border-radius: 0.5rem;
     padding: 2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(193, 200, 195, 0.2);
 }
 
 .guide-content h3 {
+    font-family: 'Epilogue', sans-serif;
     font-size: 1.8rem;
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .guide-title {
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--tertiary-color);
     margin-bottom: 1rem;
 }
 
@@ -499,7 +525,7 @@ body {
 /* Tarifs */
 .tarifs {
     padding: 5rem 0;
-    background: var(--light-color);
+    background: var(--surface-container-low);
 }
 
 .tarifs-grid {
@@ -513,10 +539,10 @@ body {
 }
 
 .tarif-card {
-    background: var(--white);
-    border-radius: 10px;
+    background: var(--surface-container-lowest);
+    border-radius: 0.5rem;
     padding: 2rem;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(193, 200, 195, 0.2);
     text-align: center;
     position: relative;
     transition: transform 0.3s;
@@ -527,31 +553,35 @@ body {
 }
 
 .tarif-card.featured {
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 16px rgba(242, 112, 54, 0.1);
 }
 
 .badge-popular {
     position: absolute;
     top: -15px;
     right: 20px;
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: var(--white);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 0.5rem;
     font-size: 0.9rem;
     font-weight: 600;
 }
 
 .tarif-header h3 {
+    font-family: 'Epilogue', sans-serif;
     font-size: 1.5rem;
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .price {
+    font-family: 'Epilogue', sans-serif;
     font-size: 3rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--primary-color);
     margin: 1rem 0;
 }
 
@@ -588,18 +618,20 @@ body {
 
 .btn-tarif {
     display: block;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--surface-tint));
     color: var(--white);
     padding: 1rem 2rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: all 0.3s;
     margin-top: 1.5rem;
 }
 
 .btn-tarif:hover {
-    background: var(--dark-color);
+    background: linear-gradient(135deg, var(--surface-tint), var(--accent-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(242, 112, 54, 0.3);
 }
 
 .tarif-details {
@@ -645,7 +677,7 @@ body {
 /* Qualité */
 .qualite {
     padding: 5rem 0;
-    background: var(--white);
+    background: var(--surface);
 }
 
 .qualite-grid {
@@ -657,8 +689,9 @@ body {
 .qualite-card {
     text-align: center;
     padding: 2rem;
-    background: var(--light-color);
-    border-radius: 10px;
+    background: var(--surface-container-lowest);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(193, 200, 195, 0.2);
 }
 
 .qualite-card h3 {
@@ -675,7 +708,7 @@ body {
 /* Agence */
 .agence {
     padding: 5rem 0;
-    background: var(--light-color);
+    background: var(--surface-container-low);
 }
 
 .agence-content {
@@ -692,10 +725,10 @@ body {
 }
 
 .agence-certification {
-    background: var(--white);
+    background: var(--surface-container-lowest);
     padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-color);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--accent-color);
 }
 
 .agence-contact {
@@ -706,7 +739,7 @@ body {
 /* CTA Final */
 .cta-final {
     padding: 5rem 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-container));
     color: var(--white);
     text-align: center;
 }
@@ -739,7 +772,7 @@ body {
     background: var(--white);
     color: var(--primary-color);
     padding: 1rem 2.5rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -747,10 +780,10 @@ body {
 }
 
 .btn-cta:hover {
-    background: var(--dark-color);
+    background: var(--accent-color);
     color: var(--white);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(242, 112, 54, 0.4);
 }
 
 .btn-cta-secondary {
@@ -773,7 +806,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
+    background: var(--primary-color);
     color: var(--white);
     padding: 3rem 0 1rem;
 }
@@ -787,8 +820,9 @@ body {
 
 .footer h3,
 .footer h4 {
+    font-family: 'Epilogue', sans-serif;
     margin-bottom: 1rem;
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 .footer ul {

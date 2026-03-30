@@ -88,6 +88,20 @@
         #mobile-menu.open {
             max-height: 500px;
         }
+
+        /* Scroll to top button */
+        #scroll-to-top {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #scroll-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #scroll-to-top:hover {
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 <body class="bg-surface text-on-background">
@@ -888,6 +902,11 @@
 
 </main>
 
+<!-- Scroll to Top Button -->
+<button id="scroll-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-4 rounded-full shadow-2xl z-40 hover:bg-primary-container transition-all" aria-label="Retour en haut">
+    <span class="material-symbols-outlined text-3xl">arrow_upward</span>
+</button>
+
 <!-- Footer -->
 <footer class="bg-stone-100 flex flex-col md:flex-row justify-between items-center gap-8 w-full border-t border-stone-200 py-12 px-8">
     <div>
@@ -918,6 +937,26 @@
         const icon = mobileMenuButton.querySelector('.material-symbols-outlined');
         icon.textContent = 'menu';
     }
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+    // Show/hide button on scroll
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top on click
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 </script>
 
 </body>

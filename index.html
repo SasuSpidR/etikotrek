@@ -1,539 +1,875 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="light" lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etikotrek, le Master Mind - Chemin des Bonshommes | 7-11 Juin 2026</title>
     <meta name="description" content="Etikotrek, le Master Mind : trek réseautage unique en Ariège sur le Chemin des Bonshommes. 5 jours d'itinérance, networking et aventure du 7 au 11 juin 2026.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#2a1e10",
+                        "surface-container-high": "#e3e8e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#738968",
+                        "background": "#f7f9f4",
+                        "tertiary-fixed": "#f0e8dc",
+                        "primary-fixed": "#dde8d5",
+                        "surface-bright": "#f7f9f4",
+                        "primary": "#5a7a4d",
+                        "on-secondary-fixed": "#1d1510",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c19",
+                        "inverse-primary": "#a8c99a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#8B7355",
+                        "on-tertiary-container": "#e8dccf",
+                        "on-primary-container": "#c4d9b8",
+                        "inverse-on-surface": "#f0f2ed",
+                        "surface-container": "#e8ede4",
+                        "surface-container-low": "#eff3ea",
+                        "secondary": "#8B7355",
+                        "on-secondary-fixed-variant": "#6b5842",
+                        "surface": "#f7f9f4",
+                        "on-secondary-container": "#4a3e2f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#d4c4ac",
+                        "outline": "#7a7d76",
+                        "on-primary-fixed": "#1e2e17",
+                        "secondary-fixed": "#e8dccf",
+                        "surface-dim": "#d7dbd3",
+                        "inverse-surface": "#2e312d",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#6b5842",
+                        "on-primary-fixed-variant": "#4a6340",
+                        "outline-variant": "#c1c7bd",
+                        "on-surface": "#1a1c19",
+                        "on-surface-variant": "#454842",
+                        "primary-fixed-dim": "#bdd5b0",
+                        "secondary-fixed-dim": "#c5b8a0",
+                        "tertiary-container": "#6b5842",
+                        "secondary-container": "#c5b8a0",
+                        "surface-container-highest": "#dce1d9",
+                        "surface-variant": "#dce1d9",
+                        "surface-tint": "#6b8a5e",
+                        "on-error": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Work Sans"],
+                        "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Epilogue', sans-serif; }
+    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="container">
-                <div class="nav-content">
-                    <div class="logo">
-                        <h2>ETIKOTREK</h2>
-                    </div>
-                    <ul class="nav-menu">
-                        <li><a href="#programme">Programme</a></li>
-                        <li><a href="#guides">Guides</a></li>
-                        <li><a href="#tarifs">Tarifs</a></li>
-                        <li><a href="#inscription" class="btn-primary">Réserver</a></li>
-                    </ul>
+<body class="bg-surface text-on-background">
+
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full bg-surface/70 backdrop-blur-md z-50">
+    <div class="font-headline font-black text-2xl text-on-surface">ETIKOTREK</div>
+    <nav class="hidden md:flex gap-8 items-center">
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#programme">Programme</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#guides">Guides</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#tarifs">Tarifs</a>
+    </nav>
+    <a href="#inscription" class="bg-primary text-white px-6 py-2 rounded-md font-headline font-bold text-sm transition-transform active:scale-95 hover:bg-primary-container">Réserver</a>
+</header>
+
+<main class="pt-20">
+
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img alt="Chemin des Bonshommes" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface/90"></div>
+    </div>
+    <div class="relative z-10 text-center px-4 max-w-5xl">
+        <p class="font-label text-sm uppercase tracking-[0.3em] text-white/90 mb-4 font-semibold">Du 7 au 11 juin 2026</p>
+        <h1 class="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-6 drop-shadow-2xl">
+            ETIKOTREK,<br/>LE MASTER MIND
+        </h1>
+        <p class="font-headline text-xl md:text-3xl font-bold text-white/95 mb-8 drop-shadow-lg">Chemin des Bonshommes - Terre de mystères et de légendes</p>
+        <p class="font-body text-base md:text-lg text-white/85 mb-8 max-w-3xl mx-auto drop-shadow-md">
+            Un trek réseautage unique en Ariège, mêlant randonnée, histoire cathare et networking.<br/>
+            5 jours d'aventure authentique sur les traces des Bonshommes.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#inscription" class="bg-primary text-white px-10 py-5 rounded-lg font-headline font-extrabold text-lg shadow-xl hover:bg-primary-container transition-all inline-flex items-center gap-3 justify-center">
+                Réserver ma place
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="#programme" class="border-2 border-white text-white px-10 py-5 rounded-lg font-headline font-bold text-lg hover:bg-white/20 backdrop-blur-sm transition-all inline-flex items-center justify-center">
+                Découvrir le programme
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Overview -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-y border-outline-variant/20 py-16">
+        <div class="flex flex-col items-center text-center space-y-4">
+            <span class="material-symbols-outlined text-4xl text-primary">timer</span>
+            <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Durée</p>
+            <p class="font-headline text-3xl font-bold text-on-surface">5 Jours</p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-4">
+            <span class="material-symbols-outlined text-4xl text-primary">landscape</span>
+            <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Difficulté</p>
+            <p class="font-headline text-3xl font-bold text-on-surface">Modéré</p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-4">
+            <span class="material-symbols-outlined text-4xl text-primary">trending_up</span>
+            <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Dénivelé Max</p>
+            <p class="font-headline text-3xl font-bold text-on-surface">970m D+</p>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-4">
+            <span class="material-symbols-outlined text-4xl text-primary">groups</span>
+            <p class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Format</p>
+            <p class="font-headline text-3xl font-bold text-on-surface">Networking</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ce que vous apprendrez -->
+<section class="py-32 px-8 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <p class="font-label text-primary uppercase tracking-widest mb-4">L'Apprentissage</p>
+            <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none mb-6">
+                TRANSFORMEZ VOTRE<br/>APPROCHE BUSINESS
+            </h2>
+            <p class="font-body text-xl text-on-surface-variant max-w-3xl mx-auto">
+                Un programme intensif mêlant mindset, stratégie commerciale et outils d'automatisation
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+            <!-- Pilier 1 -->
+            <div class="bg-surface-container-lowest p-10 rounded-xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary">psychology</span>
+                    <h3 class="text-2xl font-bold text-on-surface">Mindset d'Entrepreneur</h3>
+                </div>
+                <ul class="space-y-3 text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Définir votre pourquoi profond</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Équilibrer vie pro et perso (cercle de vie)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Construire un business aligné avec vos valeurs</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Dépasser la peur de l'échec (fear setting)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pilier 2 -->
+            <div class="bg-surface-container-lowest p-10 rounded-xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary">inventory_2</span>
+                    <h3 class="text-2xl font-bold text-on-surface">Produit & Positionnement</h3>
+                </div>
+                <ul class="space-y-3 text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Maîtriser le ciblage stratégique</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Standardiser pour scaler</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Mesurer la satisfaction client</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Créer une offre irrésistible</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pilier 3 -->
+            <div class="bg-surface-container-lowest p-10 rounded-xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary">rocket_launch</span>
+                    <h3 class="text-2xl font-bold text-on-surface">Génération & Closing</h3>
+                </div>
+                <ul class="space-y-3 text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Différencier lead qualifié vs lead chaud</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Bâtir une stratégie d'acquisition qui fonctionne</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Psychologie de la vente avancée</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Pitcher avec impact en moins d'1 minute</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pilier 4 -->
+            <div class="bg-surface-container-lowest p-10 rounded-xl">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-5xl text-primary">smart_toy</span>
+                    <h3 class="text-2xl font-bold text-on-surface">IA & Automatisation</h3>
+                </div>
+                <ul class="space-y-3 text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>CRM intelligent (HubSpot, Pipedrive)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Gestion de projet augmentée (ClickUp + IA)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Automatisation no-code (Make, Zapier)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-primary mt-1">•</span>
+                        <span>IA pour création de contenu</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Format -->
+        <div class="bg-primary text-white p-12 rounded-xl text-center">
+            <h3 class="text-3xl font-bold mb-6">Notre Format Unique</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <span class="material-symbols-outlined text-5xl mb-3 opacity-90">school</span>
+                    <p class="font-semibold text-lg">Théorie condensée</p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-5xl mb-3 opacity-90">fitness_center</span>
+                    <p class="font-semibold text-lg">Exercices pratiques</p>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined text-5xl mb-3 opacity-90">forum</span>
+                    <p class="font-semibold text-lg">Mise en commun</p>
                 </div>
             </div>
-        </nav>
-    </header>
+            <div class="mt-8 pt-8 border-t border-white/20">
+                <p class="text-xl font-bold mb-3">Networking Actif</p>
+                <p class="text-white/90">Rotations de partenaires pendant les marches • Résolution de problèmes business en binôme • Échanges authentiques loin des écrans</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-tag">Du 7 au 11 juin 2026</span>
-                <h1 class="hero-title">Etikotrek, le Master Mind</h1>
-                <p class="hero-subtitle">Chemin des Bonshommes - Terre de mystères et de légendes</p>
-                <p class="hero-description">
-                    Un trek réseautage unique en Ariège, mêlant randonnée, histoire cathare et networking.<br>
-                    5 jours d'aventure authentique sur les traces des Bonshommes.
+<!-- Introduction Pays Cathare -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+    <div class="mb-12">
+        <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none mb-8">PAYS CATHARE</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                Entre Méditerranée et Pyrénées, le Pays Cathare et l'Ariège offrent un territoire sauvage et profondément marqué par l'histoire. Terre de refuge et de résistance, dominée par le mythique Château de Montségur, elle invite à la contemplation et à l'itinérance.
+            </p>
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                Le Chemin des Bonshommes suit les anciennes routes d'exil cathares vers l'Espagne, à travers vallées, cols et estives. Marcher ici, c'est vivre une expérience authentique, mêlant nature, mémoire et aventure humaine.
+            </p>
+        </div>
+        <div class="h-96 rounded-xl overflow-hidden">
+            <img src="images/16796012-diaporama-1200x800.jpg.jpeg" alt="Paysage montagneux" class="w-full h-full object-cover"/>
+        </div>
+    </div>
+</section>
+
+<!-- Galerie -->
+<section class="py-32 bg-stone-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 mb-16">
+        <h2 class="text-white text-5xl font-black italic tracking-tighter">L'AVENTURE EN IMAGES</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+        <div class="h-96 rounded-lg overflow-hidden">
+            <img alt="Château de Foix" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/Chateau de foix.webp"/>
+        </div>
+        <div class="h-[30rem] md:mt-[-4rem] rounded-lg overflow-hidden">
+            <img alt="Château de Montségur" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/montsegur.jpg.jpeg"/>
+        </div>
+        <div class="h-80 md:mt-8 rounded-lg overflow-hidden">
+            <img alt="Randonnée en montagne" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/P1020422_28.jpeg"/>
+        </div>
+        <div class="h-[32rem] rounded-lg overflow-hidden">
+            <img alt="Paysages pyrénéens" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/IVR73_20080902021NUCA_P.jpeg"/>
+        </div>
+        <div class="h-80 rounded-lg overflow-hidden md:col-span-1">
+            <img alt="Fleur de lys royale" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/prades-lys-ourza-haut-edited-300x300.jpg.jpeg"/>
+        </div>
+        <div class="h-96 md:mt-[-4rem] rounded-lg overflow-hidden">
+            <img alt="Gîtes authentiques" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/GITE-D-ETAPE-LE-SILENCE-DU-MIDI-6.jpg.jpeg"/>
+        </div>
+        <div class="h-[28rem] rounded-lg overflow-hidden">
+            <img alt="Hôtel confort" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/mercure-ax-les-thermes-52668-10072025150049-1.webp"/>
+        </div>
+        <div class="h-80 md:mt-8 rounded-lg overflow-hidden">
+            <img alt="Spa et détente" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" src="images/spa.jpg.jpeg"/>
+        </div>
+    </div>
+</section>
+
+<!-- Programme Section (Bento Grid Layout) -->
+<section id="programme" class="bg-surface-container-low py-32 px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-20">
+            <p class="font-label text-primary-fixed-variant uppercase tracking-widest mb-4">Parcours de l'aventure</p>
+            <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none">PROGRAMME DU TREK</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <!-- Jour 1 -->
+            <div class="md:col-span-7 bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex flex-col gap-6">
+                    <div class="h-64 rounded-lg overflow-hidden">
+                        <img alt="Foix" class="w-full h-full object-cover" src="images/Foix-programme.webp"/>
+                    </div>
+                    <div>
+                        <span class="text-primary font-black text-6xl opacity-10">01</span>
+                        <h3 class="text-2xl font-bold text-on-surface mt-[-2rem] mb-3">Foix</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">Au seuil de la légende, tout commence ici</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary text-lg mt-1">location_on</span>
+                                <div>
+                                    <p class="font-bold text-on-surface text-sm">Accueil du séjour vers 15h</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary text-lg mt-1">explore</span>
+                                <div>
+                                    <p class="font-bold text-on-surface text-sm">Rallye urbain de Foix</p>
+                                    <p class="text-xs text-on-surface-variant">La Chevalière des Contes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed font-body text-sm mb-4">
+                            Située au cœur des Pyrénées ariégeoises, Foix accueille le groupe pour une première nuit. À travers un rallye urbain mené par la mystérieuse Chevalière des contes, ruelles et places livrent leurs secrets, mêlant énigmes et imaginaire.
+                        </p>
+                        <div class="bg-tertiary-container/30 border-l-4 border-primary px-4 py-3 rounded mb-4">
+                            <p class="text-sm text-on-surface font-semibold mb-2">🎯 Sessions du soir (19h-21h30) :</p>
+                            <ul class="text-xs text-on-surface-variant space-y-1">
+                                <li>• Présentation du projet & itinéraire</li>
+                                <li>• Ice breaker : exercice de l'objet personnel</li>
+                                <li>• PowerPitch : pitcher le projet de votre voisin</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1 bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">hotel</span>
+                                Nuit en Hôtel 3*
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jour 2 -->
+            <div class="md:col-span-5 bg-primary text-on-primary p-10 rounded-xl flex flex-col">
+                <div class="h-48 rounded-lg overflow-hidden mb-6">
+                    <img alt="Montségur" class="w-full h-full object-cover" src="images/Montsegure-programme.jpg"/>
+                </div>
+                <span class="text-white font-black text-6xl opacity-10">02</span>
+                <h3 class="text-2xl font-bold text-white mt-[-2rem] mb-3">Montségur - Comus</h3>
+                <p class="text-on-primary-container text-sm font-semibold mb-4">Les pierres murmurent encore les légendes</p>
+                <div class="space-y-2 mb-4 flex-1">
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="material-symbols-outlined text-base">directions_bus</span>
+                        <span>Transfert Foix - Montségur</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="material-symbols-outlined text-base">terrain</span>
+                        <span>Montée au château (1km, 160m D+)</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="material-symbols-outlined text-base">hiking</span>
+                        <span>Gorges de la Frau (7,5km, 570m D+)</span>
+                    </div>
+                </div>
+                <p class="text-on-primary-container text-sm leading-relaxed mb-4">
+                    Après la visite du Pog de Montségur, haut lieu de mémoire et de mystère, le chemin plonge dans les impressionnantes Gorges de la Frau, défilé sauvage où les légendes cathares murmurent encore.
                 </p>
-                <div class="hero-cta">
-                    <a href="#inscription" class="btn-hero">Réserver ma place</a>
-                    <a href="#programme" class="btn-secondary">Découvrir le programme</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Introduction -->
-    <section class="intro">
-        <div class="container">
-            <div class="intro-content">
-                <h2>Pays Cathare</h2>
-                <div class="intro-with-image">
-                    <div class="intro-text-content">
-                        <p class="intro-text">
-                            Entre Méditerranée et Pyrénées, le Pays Cathare et l'Ariège offrent un territoire
-                            sauvage et profondément marqué par l'histoire. Terre de refuge et de résistance, dominée
-                            par le mythique Château de Montségur, elle invite à la contemplation et à l'itinérance.
-                        </p>
-                        <p class="intro-text">
-                            Le Chemin des Bonshommes suit les anciennes routes d'exil cathares vers l'Espagne, à
-                            travers vallées, cols et estives. Marcher ici, c'est vivre une expérience authentique,
-                            mêlant nature, mémoire et aventure humaine.
-                        </p>
-                    </div>
-                    <div class="intro-image">
-                        <img src="images/16796012-diaporama-1200x800.jpg.jpeg" alt="Paysage montagneux">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galerie -->
-    <section class="galerie">
-        <div class="container">
-            <h2 class="section-title">L'aventure en images</h2>
-            <div class="galerie-grid">
-                <div class="galerie-item">
-                    <img src="images/Chateau de foix.webp" alt="Château de Foix">
-                    <div class="galerie-overlay">
-                        <p>Château de Foix</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/montsegur.jpg.jpeg" alt="Montségur">
-                    <div class="galerie-overlay">
-                        <p>Château de Montségur</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/P1020422_28.jpeg" alt="Randonnée en montagne">
-                    <div class="galerie-overlay">
-                        <p>Randonnées inoubliables</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/IVR73_20080902021NUCA_P.jpeg" alt="Paysages pyrénéens">
-                    <div class="galerie-overlay">
-                        <p>Paysages époustouflants</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/prades-lys-ourza-haut-edited-300x300.jpg.jpeg" alt="Fleur de lys royale">
-                    <div class="galerie-overlay">
-                        <p>Fleur de lys royale</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/GITE-D-ETAPE-LE-SILENCE-DU-MIDI-6.jpg.jpeg" alt="Hébergements authentiques">
-                    <div class="galerie-overlay">
-                        <p>Gîtes authentiques</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/mercure-ax-les-thermes-52668-10072025150049-1.webp" alt="Hôtel Mercure">
-                    <div class="galerie-overlay">
-                        <p>Hôtel confort</p>
-                    </div>
-                </div>
-                <div class="galerie-item">
-                    <img src="images/spa.jpg.jpeg" alt="Spa et détente">
-                    <div class="galerie-overlay">
-                        <p>Spa & bien-être</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programme -->
-    <section id="programme" class="programme">
-        <div class="container">
-            <h2 class="section-title">Programme du trek</h2>
-            <div class="programme-grid">
-
-                <!-- Jour 1 -->
-                <div class="day-card">
-                    <div class="day-image">
-                        <img src="images/Foix-programme.webp" alt="Château de Foix">
-                    </div>
-                    <div class="day-header">
-                        <span class="day-number">Jour 1</span>
-                        <h3>Foix</h3>
-                        <p class="day-tagline">Au seuil de la légende, tout commence ici</p>
-                    </div>
-                    <div class="day-content">
-                        <div class="day-activity">
-                            <span class="icon">📍</span>
-                            <div>
-                                <strong>Accueil du séjour vers 15h</strong>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">🧭</span>
-                            <div>
-                                <strong>Rallye urbain de Foix</strong>
-                                <p>La Chevalière des Contes</p>
-                            </div>
-                        </div>
-                        <p class="day-description">
-                            Située au cœur des Pyrénées ariégeoises, Foix accueille le groupe pour une première
-                            nuit. À travers un rallye urbain mené par la mystérieuse Chevalière des contes, ruelles
-                            et places livrent leurs secrets, mêlant énigmes et imaginaire.
-                        </p>
-                        <div class="day-info">
-                            <span class="info-badge">🏨 Nuit en Hôtel 3*</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jour 2 -->
-                <div class="day-card">
-                    <div class="day-image">
-                        <img src="images/Montsegure-programme.jpg" alt="Château de Montségur">
-                    </div>
-                    <div class="day-header">
-                        <span class="day-number">Jour 2</span>
-                        <h3>Montségur - Comus</h3>
-                        <p class="day-tagline">Les pierres murmurent encore les légendes</p>
-                    </div>
-                    <div class="day-content">
-                        <div class="day-activity">
-                            <span class="icon">🚌</span>
-                            <div>
-                                <strong>Transfert Foix - Montségur</strong>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">⛰️</span>
-                            <div>
-                                <strong>Montée au château</strong>
-                                <p>1km et 160m D+</p>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">🥾</span>
-                            <div>
-                                <strong>Après-midi : Gorges de la Frau</strong>
-                                <p>7,5km et 570m D+</p>
-                            </div>
-                        </div>
-                        <p class="day-description">
-                            Après la visite du Pog de Montségur, haut lieu de mémoire et de mystère, le chemin
-                            plonge dans les impressionnantes Gorges de la Frau, défilé sauvage où les légendes
-                            cathares murmurent encore.
-                        </p>
-                        <div class="day-info">
-                            <span class="info-badge">🏡 Nuit en gîte - Comus</span>
-                            <span class="info-badge">🎒 Transfert des bagages</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jour 3 -->
-                <div class="day-card">
-                    <div class="day-image">
-                        <img src="images/comus-programme.jpg" alt="Comus">
-                    </div>
-                    <div class="day-header">
-                        <span class="day-number">Jour 3</span>
-                        <h3>Comus - Chioula</h3>
-                        <p class="day-tagline">Sur les traces des derniers cathares</p>
-                    </div>
-                    <div class="day-content">
-                        <div class="day-activity">
-                            <span class="icon">🥾</span>
-                            <div>
-                                <strong>Randonnée</strong>
-                                <p>11km et 650m D+ ou 14km et 970m D+</p>
-                            </div>
-                        </div>
-                        <p class="day-description">
-                            Depuis Comus, le chemin s'élève sur les hauts plateaux, dans une atmosphère ouverte
-                            et silencieuse. La marche conduit à Montaillou, village emblématique de l'histoire
-                            cathare, puis au Col du Chioula, vaste belvédère face aux Pyrénées.
-                        </p>
-                        <div class="day-highlight">
-                            <strong>🌟 Découverte :</strong> Fleur de lys de la forêt royale de Louis XIV (1670)
-                        </div>
-                        <div class="day-info">
-                            <span class="info-badge">🏔️ Nuit en refuge - 1650m</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jour 4 -->
-                <div class="day-card">
-                    <div class="day-image">
-                        <img src="images/Chioula-programme.webp" alt="Chioula">
-                    </div>
-                    <div class="day-header">
-                        <span class="day-number">Jour 4</span>
-                        <h3>Chioula - Ax-les-Thermes</h3>
-                        <p class="day-tagline">Quand la montagne s'ouvre vers la vallée</p>
-                    </div>
-                    <div class="day-content">
-                        <div class="day-activity">
-                            <span class="icon">🥾</span>
-                            <div>
-                                <strong>Descente vers Ax-les-Thermes</strong>
-                                <p>13km et 300m D+</p>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">💆</span>
-                            <div>
-                                <strong>Détente Spa & Hammam</strong>
-                            </div>
-                        </div>
-                        <p class="day-description">
-                            Depuis le Col du Chioula, longue descente vers Ax-les-Thermes. Les estives s'effacent
-                            au profit des forêts profondes. La journée s'achève par une nuit en hôtel, dédiée à
-                            la détente entre spa et hammam.
-                        </p>
-                        <div class="day-info">
-                            <span class="info-badge">🏨 Nuit en Hôtel 4*</span>
-                            <span class="info-badge">🎒 Transfert des bagages</span>
-                            <span class="info-badge">🤝 Salle de conférence disponible</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Jour 5 -->
-                <div class="day-card">
-                    <div class="day-image">
-                        <img src="images/ax-les-thermes-programme.jpg" alt="Ax-les-Thermes">
-                    </div>
-                    <div class="day-header">
-                        <span class="day-number">Jour 5</span>
-                        <h3>Ax-les-Thermes</h3>
-                        <p class="day-tagline">Le temps du retour, entre eaux et mémoire</p>
-                    </div>
-                    <div class="day-content">
-                        <div class="day-activity">
-                            <span class="icon">💆</span>
-                            <div>
-                                <strong>Matinée détente en autonomie</strong>
-                                <p>Spa, hammam, visite guidée de la cité thermale</p>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">🤝</span>
-                            <div>
-                                <strong>Conférence</strong>
-                            </div>
-                        </div>
-                        <div class="day-activity">
-                            <span class="icon">🚂</span>
-                            <div>
-                                <strong>Fin du séjour vers 15h</strong>
-                                <p>Gare d'Ax-les-Thermes ou Foix</p>
-                            </div>
-                        </div>
-                        <p class="day-description">
-                            Cette dernière journée invite à relâcher pleinement le corps et l'esprit. Un transfert
-                            en train ramène le groupe vers Foix, refermant le cercle du voyage, riche de traces et
-                            de légendes partagées.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Guides -->
-    <section id="guides" class="guides">
-        <div class="container">
-            <h2 class="section-title">Vos guides</h2>
-            <p class="guides-intro">Deux guides experts et fins connaisseurs du secteur vous accompagneront tout au long de cette aventure unique.</p>
-            <div class="guides-grid">
-
-                <div class="guide-card">
-                    <div class="guide-content">
-                        <h3>Jean Demary</h3>
-                        <p class="guide-title">Accompagnateur en montagne & Photographe</p>
-                        <p class="guide-bio">
-                            Ancien de l'industrie, devenu accompagnateur en montagne et photographe professionnel,
-                            je conjugue ces deux métiers à travers l'expertise technique, la passion du terrain
-                            et un regard sensible sur les paysages.
-                        </p>
-                        <p class="guide-bio">
-                            Pour que votre séjour soit inoubliable, en fin connaisseur du territoire et de sa
-                            faune sauvage, je vous guiderai sur les sentiers les mieux adaptés. Toujours à l'affût
-                            d'un isard ou du vol silencieux d'un aigle royal.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-content">
-                        <h3>Denis Wohmann</h3>
-                        <p class="guide-title">Accompagnateur en montagne depuis 16 ans</p>
-                        <p class="guide-bio">
-                            Issu d'une carrière militaire, j'ai acquis rigueur, sens de l'engagement et gestion
-                            des situations complexes, des compétences aujourd'hui mises au service du terrain et
-                            du renfort d'équipe en milieu montagnard.
-                        </p>
-                        <p class="guide-bio">
-                            Passionné par l'histoire des Pyrénées et le catharisme, auquel j'ai consacré un mémoire.
-                            Créatif et guidé par l'imagination, je conçois chaque sortie comme une expérience
-                            singulière, ponctuée de surprises, où la montagne devient un lieu de rencontres, de
-                            légendes et d'émotions partagées.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Tarifs -->
-    <section id="tarifs" class="tarifs">
-        <div class="container">
-            <h2 class="section-title">Tarifs</h2>
-
-            <div class="tarifs-grid">
-
-                <div class="tarif-card featured">
-                    <div class="badge-popular">Offre Early Bird</div>
-                    <div class="tarif-header">
-                        <h3>Inscription anticipée</h3>
-                        <div class="price-original">1 497€</div>
-                        <div class="price">1 297€</div>
-                        <p class="price-subtitle">par personne</p>
-                        <p class="price-detail">Jusqu'au 30 avril 2026</p>
-                    </div>
-                    <ul class="tarif-features">
-                        <li>✓ Encadrement professionnel par 2 guides experts</li>
-                        <li>✓ Hébergements inclus</li>
-                        <li>✓ Pension complète</li>
-                        <li>✓ Transferts de bagages</li>
-                        <li>✓ Navettes</li>
-                        <li>✓ Accès spa & hammam</li>
-                    </ul>
-                    <a href="#inscription" class="btn-tarif">Profiter de l'offre</a>
-                </div>
-
-                <div class="tarif-card">
-                    <div class="tarif-header">
-                        <h3>Tarif standard</h3>
-                        <div class="price">1 497€</div>
-                        <p class="price-subtitle">par personne</p>
-                        <p class="price-detail">À partir du 1er mai 2026</p>
-                    </div>
-                    <ul class="tarif-features">
-                        <li>✓ Encadrement professionnel par 2 guides experts</li>
-                        <li>✓ Hébergements inclus</li>
-                        <li>✓ Pension complète</li>
-                        <li>✓ Transferts de bagages</li>
-                        <li>✓ Navettes</li>
-                        <li>✓ Accès spa & hammam</li>
-                    </ul>
-                    <a href="#inscription" class="btn-tarif">Réserver</a>
-                </div>
-
-            </div>
-
-            <div class="tarif-details">
-                <div class="tarif-included">
-                    <h4>Le tarif comprend :</h4>
-                    <ul>
-                        <li>L'encadrement et la responsabilité civile</li>
-                        <li>L'alimentation complète</li>
-                        <li>Le transfert des bagages</li>
-                        <li>Les navettes</li>
-                        <li>Hébergement en hôtel (chambres doubles) et dortoirs (refuges)</li>
+                <div class="bg-white/10 border-l-4 border-white px-4 py-3 rounded mb-4">
+                    <p class="text-sm text-white font-semibold mb-2">🚶 Pendant la marche :</p>
+                    <p class="text-xs text-on-primary-container mb-2">Networking actif : rotation de partenaires toutes les 20 min (présentation, pourquoi, recherche business)</p>
+                    <p class="text-sm text-white font-semibold mb-2 mt-3">🎯 Sessions du soir (1h15) :</p>
+                    <ul class="text-xs text-on-primary-container space-y-1">
+                        <li>• Définir votre pourquoi profond</li>
+                        <li>• Cercle de vie : équilibrer pro & perso</li>
+                        <li>• Construire un business qui a du sens</li>
                     </ul>
                 </div>
-                <div class="tarif-options">
-                    <h4>Options :</h4>
-                    <ul>
-                        <li>Retour en train Ax-les-Thermes - Foix</li>
-                        <li>Assurances annulation et rapatriement</li>
-                    </ul>
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center gap-1 bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        <span class="material-symbols-outlined" style="font-size: 14px;">cottage</span>
+                        Gîte - Comus
+                    </span>
+                    <span class="inline-flex items-center gap-1 bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        <span class="material-symbols-outlined" style="font-size: 14px;">luggage</span>
+                        Transfert bagages
+                    </span>
                 </div>
-                <div class="tarif-excluded">
-                    <h4>Le tarif ne comprend pas :</h4>
-                    <ul>
-                        <li>Les transports aux points de rendez-vous et de dispersion</li>
-                        <li>Les boissons et compléments énergétiques</li>
-                        <li>Les en-cas personnels</li>
+            </div>
+
+            <!-- Jour 3 -->
+            <div class="md:col-span-12 bg-surface-container-highest p-10 rounded-xl">
+                <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                    <div class="flex-1">
+                        <span class="text-primary font-black text-6xl opacity-10">03</span>
+                        <h3 class="text-2xl font-bold text-on-surface mt-[-2rem] mb-3">Comus - Chioula</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">Sur les traces des derniers cathares</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                                <span class="material-symbols-outlined">hiking</span>
+                                <span>11km et 650m D+ ou 14km et 970m D+</span>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed font-body mb-6">
+                            Depuis Comus, le chemin s'élève sur les hauts plateaux, dans une atmosphère ouverte et silencieuse. La marche conduit à Montaillou, village emblématique de l'histoire cathare, puis au Col du Chioula, vaste belvédère face aux Pyrénées.
+                        </p>
+                        <div class="bg-tertiary-container/30 border-l-4 border-surface-tint px-4 py-3 rounded mb-4">
+                            <p class="text-sm text-on-surface"><strong>Découverte :</strong> Fleur de lys de la forêt royale de Louis XIV (1670)</p>
+                        </div>
+                        <div class="bg-tertiary-container/30 border-l-4 border-primary px-4 py-3 rounded mb-4">
+                            <p class="text-sm text-on-surface font-semibold mb-2">🚶 Pendant la marche :</p>
+                            <p class="text-xs text-on-surface-variant mb-2">Résolution de problèmes en binôme : rotation 30 min (10 min chacun pour exposer un défi business et recevoir de l'aide)</p>
+                            <p class="text-sm text-on-surface font-semibold mb-2 mt-3">🎯 Sessions du soir au refuge (1h30) :</p>
+                            <ul class="text-xs text-on-surface-variant space-y-1">
+                                <li>• Raisons d'achat vs critères d'achat</li>
+                                <li>• PowerPitch : pitcher en moins d'1 minute</li>
+                                <li>• Lead qualifié vs lead chaud</li>
+                            </ul>
+                        </div>
+                        <span class="inline-flex items-center gap-1 bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                            <span class="material-symbols-outlined" style="font-size: 14px;">cabin</span>
+                            Refuge - 1650m
+                        </span>
+                    </div>
+                    <div class="w-full md:w-1/2 h-80 rounded-xl overflow-hidden">
+                        <img alt="Comus" class="w-full h-full object-cover" src="images/comus-programme.jpg"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jour 4 -->
+            <div class="md:col-span-7 bg-surface-container-lowest p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex flex-col gap-6">
+                    <div class="h-64 rounded-lg overflow-hidden">
+                        <img alt="Chioula" class="w-full h-full object-cover" src="images/Chioula-programme.webp"/>
+                    </div>
+                    <div>
+                        <span class="text-primary font-black text-6xl opacity-10">04</span>
+                        <h3 class="text-2xl font-bold text-on-surface mt-[-2rem] mb-3">Chioula - Ax-les-Thermes</h3>
+                        <p class="text-primary font-semibold text-sm mb-4">Quand la montagne s'ouvre vers la vallée</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary text-lg mt-1">hiking</span>
+                                <div>
+                                    <p class="font-bold text-on-surface text-sm">Descente vers Ax-les-Thermes</p>
+                                    <p class="text-xs text-on-surface-variant">13km et 300m D+</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-secondary text-lg mt-1">spa</span>
+                                <div>
+                                    <p class="font-bold text-on-surface text-sm">Détente Spa & Hammam</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed font-body text-sm mb-4">
+                            Depuis le Col du Chioula, longue descente vers Ax-les-Thermes. Les estives s'effacent au profit des forêts profondes. La journée s'achève par une nuit en hôtel, dédiée à la détente entre spa et hammam.
+                        </p>
+                        <div class="bg-tertiary-container/30 border-l-4 border-primary px-4 py-3 rounded mb-4">
+                            <p class="text-sm text-on-surface font-semibold mb-2">🚶 Pendant la marche :</p>
+                            <p class="text-xs text-on-surface-variant mb-2">Networking actif : nouvelles rotations de partenaires toutes les 20 min</p>
+                            <p class="text-sm text-on-surface font-semibold mb-2 mt-3">🎯 Sessions du soir à l'hôtel (2h) :</p>
+                            <ul class="text-xs text-on-surface-variant space-y-1">
+                                <li>• <strong>IA & Automatisation</strong> : CRM, ClickUp, Make/Zapier, IA contenu</li>
+                                <li>• <strong>Closing</strong> : Psychologie de la vente avancée</li>
+                                <li>• Pitcher avec impact</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1 bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">hotel</span>
+                                Hôtel 4*
+                            </span>
+                            <span class="inline-flex items-center gap-1 bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">spa</span>
+                                Spa & Hammam
+                            </span>
+                            <span class="inline-flex items-center gap-1 bg-secondary-container text-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">meeting_room</span>
+                                Salle conférence
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jour 5 -->
+            <div class="md:col-span-5 bg-tertiary-container text-tertiary-fixed p-10 rounded-xl flex flex-col">
+                <div class="h-48 rounded-lg overflow-hidden mb-6">
+                    <img alt="Ax-les-Thermes" class="w-full h-full object-cover" src="images/ax-les-thermes-programme.jpg"/>
+                </div>
+                <span class="text-on-tertiary-fixed font-black text-6xl opacity-20">05</span>
+                <h3 class="text-2xl font-bold text-on-tertiary-fixed mt-[-2rem] mb-3">Ax-les-Thermes</h3>
+                <p class="text-on-tertiary-container text-sm font-semibold mb-4">Le temps du retour, entre eaux et mémoire</p>
+                <div class="space-y-2 mb-4 flex-1">
+                    <div class="flex items-center gap-2 text-sm text-on-tertiary-fixed">
+                        <span class="material-symbols-outlined text-base">spa</span>
+                        <span>Matinée détente en autonomie</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-tertiary-fixed">
+                        <span class="material-symbols-outlined text-base">event</span>
+                        <span>Conférence</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-tertiary-fixed">
+                        <span class="material-symbols-outlined text-base">train</span>
+                        <span>Fin du séjour vers 15h</span>
+                    </div>
+                </div>
+                <p class="text-on-tertiary-container text-sm leading-relaxed mb-4">
+                    Cette dernière journée invite à relâcher pleinement le corps et l'esprit. Un transfert en train ramène le groupe vers Foix, refermant le cercle du voyage, riche de traces et de légendes partagées.
+                </p>
+                <div class="bg-white/10 border-l-4 border-on-tertiary-fixed px-4 py-3 rounded">
+                    <p class="text-sm text-on-tertiary-fixed font-semibold mb-2">🎯 Session matinale :</p>
+                    <ul class="text-xs text-on-tertiary-container space-y-1">
+                        <li>• Plan d'action individuel : vos 3 priorités post-trek</li>
+                        <li>• Tour de table : insights & engagements</li>
+                        <li>• Clôture & échanges de contacts</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Qualité -->
-    <section class="qualite">
-        <div class="container">
-            <h2 class="section-title">Un gage de qualité</h2>
-            <div class="qualite-grid">
-                <div class="qualite-card">
-                    <h3>🏔️ Label Outdoor Pyrénées</h3>
-                    <p>Nous avons obtenu le label Outdoor Pyrénées garantissant la qualité de nos prestations.</p>
-                </div>
-                <div class="qualite-card">
-                    <h3>🌱 Développement durable</h3>
-                    <p>Nous sommes engagés dans le développement durable et favorisons les produits du terroir et les circuits courts.</p>
-                </div>
-                <div class="qualite-card">
-                    <h3>✅ France Tourisme et Occitanie</h3>
-                    <p>Démarche volontaire pour l'amélioration de nos services. L'écoute et la relation client sont privilégiées.</p>
-                </div>
-                <div class="qualite-card">
-                    <h3>🏞️ Valeur Parc Naturel Régional</h3>
-                    <p>Nous favorisons la convivialité et la sécurité du groupe afin de garantir une prestation de qualité.</p>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section class="agence">
-        <div class="container">
-            <h2 class="section-title">Votre contact</h2>
-            <div class="agence-content">
+<!-- Guides -->
+<section id="guides" class="py-32 px-8 max-w-7xl mx-auto">
+    <div class="mb-16">
+        <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none mb-6">VOS GUIDES</h2>
+        <p class="font-body text-lg text-on-surface-variant max-w-3xl">
+            Deux guides experts et fins connaisseurs du secteur vous accompagneront tout au long de cette aventure unique.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Guide 1 -->
+        <div class="bg-surface-container-low p-10 rounded-xl">
+            <h3 class="text-2xl font-bold text-on-surface mb-2">Jean Demary</h3>
+            <p class="text-primary font-semibold text-sm mb-6">Accompagnateur en montagne & Photographe</p>
+            <div class="space-y-4 text-on-surface-variant font-body leading-relaxed">
                 <p>
-                    <strong>Geoffroy Detrousselle</strong><br>
-                    Gérant de SpidR<br>
-                    Co-organisateur
+                    Ancien de l'industrie, devenu accompagnateur en montagne et photographe professionnel, je conjugue ces deux métiers à travers l'expertise technique, la passion du terrain et un regard sensible sur les paysages.
                 </p>
-                <div class="agence-contact">
-                    <p><strong>📞 +33 6 25 65 77 43</strong></p>
-                    <p><strong>✉️ geoffroy@spidr.fr</strong></p>
-                </div>
+                <p>
+                    Pour que votre séjour soit inoubliable, en fin connaisseur du territoire et de sa faune sauvage, je vous guiderai sur les sentiers les mieux adaptés. Toujours à l'affût d'un isard ou du vol silencieux d'un aigle royal.
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Final -->
-    <section id="inscription" class="cta-final">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Prêt à vivre cette aventure ?</h2>
-                <p>Rejoignez-nous pour 5 jours inoubliables sur le Chemin des Bonshommes</p>
-                <p class="cta-date">Du 7 au 11 juin 2026</p>
-                <div class="cta-buttons">
-                    <a href="mailto:geoffroy@spidr.fr?subject=Réservation Etikotrek Master Mind" class="btn-cta">Réserver ma place</a>
-                    <a href="https://cal.com/geoffroy-detrousselle/meet-spidr" target="_blank" class="btn-cta-secondary">Nous contacter</a>
-                </div>
+        <!-- Guide 2 -->
+        <div class="bg-surface-container-low p-10 rounded-xl">
+            <h3 class="text-2xl font-bold text-on-surface mb-2">Denis Wohmann</h3>
+            <p class="text-primary font-semibold text-sm mb-6">Accompagnateur en montagne depuis 16 ans</p>
+            <div class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+                <p>
+                    Issu d'une carrière militaire, j'ai acquis rigueur, sens de l'engagement et gestion des situations complexes, des compétences aujourd'hui mises au service du terrain et du renfort d'équipe en milieu montagnard.
+                </p>
+                <p>
+                    Passionné par l'histoire des Pyrénées et le catharisme, auquel j'ai consacré un mémoire. Créatif et guidé par l'imagination, je conçois chaque sortie comme une expérience singulière, ponctuée de surprises, où la montagne devient un lieu de rencontres, de légendes et d'émotions partagées.
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Etikotrek, le Master Mind</h3>
-                    <p>Geoffroy Detrousselle - SpidR</p>
-                    <p>📞 +33 6 25 65 77 43</p>
-                    <p>✉️ geoffroy@spidr.fr</p>
+    </div>
+</section>
+
+<!-- Tarifs -->
+<section id="tarifs" class="bg-surface-container-low py-32 px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none">TARIFS</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+            <!-- Tarif Early Bird -->
+            <div class="bg-primary text-on-primary p-12 rounded-xl relative">
+                <div class="absolute top-4 right-4 bg-surface-tint text-on-primary px-4 py-2 rounded-full text-xs font-bold uppercase">
+                    Offre Early Bird
                 </div>
-                <div class="footer-links">
-                    <h4>Liens utiles</h4>
-                    <ul>
-                        <li><a href="#programme">Programme</a></li>
-                        <li><a href="#guides">Guides</a></li>
-                        <li><a href="#tarifs">Tarifs</a></li>
-                    </ul>
+                <h3 class="text-2xl font-bold text-white mb-6">Inscription anticipée</h3>
+                <div class="mb-6">
+                    <p class="text-on-primary-container line-through text-2xl mb-2">1 497€</p>
+                    <p class="text-6xl font-black text-white mb-2">1 297€</p>
+                    <p class="text-sm text-on-primary-container">par personne</p>
+                    <p class="text-sm text-on-primary-container font-semibold mt-2">Jusqu'au 30 avril 2026</p>
                 </div>
+                <ul class="space-y-3 mb-8 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Encadrement professionnel par 2 guides experts</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Hébergements inclus</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Pension complète</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Transferts de bagages</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Navettes</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Accès spa & hammam</span>
+                    </li>
+                </ul>
+                <a href="#inscription" class="block w-full bg-white text-primary text-center px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-surface-container transition-all">
+                    Profiter de l'offre
+                </a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Etikotrek - Tous droits réservés</p>
+
+            <!-- Tarif Standard -->
+            <div class="bg-surface-container-highest p-12 rounded-xl border-2 border-outline-variant">
+                <h3 class="text-2xl font-bold text-on-surface mb-6">Tarif standard</h3>
+                <div class="mb-6">
+                    <p class="text-6xl font-black text-primary mb-2">1 497€</p>
+                    <p class="text-sm text-on-surface-variant">par personne</p>
+                    <p class="text-sm text-on-surface-variant font-semibold mt-2">À partir du 1er mai 2026</p>
+                </div>
+                <ul class="space-y-3 mb-8 text-sm text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Encadrement professionnel par 2 guides experts</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Hébergements inclus</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Pension complète</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Transferts de bagages</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Navettes</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-base mt-0.5">check_circle</span>
+                        <span>Accès spa & hammam</span>
+                    </li>
+                </ul>
+                <a href="#inscription" class="block w-full bg-primary text-on-primary text-center px-8 py-4 rounded-lg font-headline font-bold text-lg hover:opacity-90 transition-all">
+                    Réserver
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Détails Tarifs -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-surface-container-lowest p-8 rounded-xl">
+                <h4 class="text-lg font-bold text-on-surface mb-4">Le tarif comprend :</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>L'encadrement et la responsabilité civile</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>L'alimentation complète</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Le transfert des bagages</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Les navettes</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Hébergement en hôtel (chambres doubles) et dortoirs (refuges)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-surface-container-lowest p-8 rounded-xl">
+                <h4 class="text-lg font-bold text-on-surface mb-4">Options :</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Retour en train Ax-les-Thermes - Foix</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Assurances annulation et rapatriement</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-surface-container-lowest p-8 rounded-xl">
+                <h4 class="text-lg font-bold text-on-surface mb-4">Le tarif ne comprend pas :</h4>
+                <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Les transports aux points de rendez-vous et de dispersion</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Les boissons et compléments énergétiques</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-secondary">•</span>
+                        <span>Les en-cas personnels</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<!-- Qualité -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+    <div class="mb-16">
+        <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tighter leading-none">UN GAGE DE QUALITÉ</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-surface-container-low p-8 rounded-xl">
+            <div class="text-4xl mb-4">🏔️</div>
+            <h3 class="text-lg font-bold text-on-surface mb-3">Label Outdoor Pyrénées</h3>
+            <p class="text-sm text-on-surface-variant">Nous avons obtenu le label Outdoor Pyrénées garantissant la qualité de nos prestations.</p>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-xl">
+            <div class="text-4xl mb-4">🌱</div>
+            <h3 class="text-lg font-bold text-on-surface mb-3">Développement durable</h3>
+            <p class="text-sm text-on-surface-variant">Nous sommes engagés dans le développement durable et favorisons les produits du terroir et les circuits courts.</p>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-xl">
+            <div class="text-4xl mb-4">✅</div>
+            <h3 class="text-lg font-bold text-on-surface mb-3">France Tourisme et Occitanie</h3>
+            <p class="text-sm text-on-surface-variant">Démarche volontaire pour l'amélioration de nos services. L'écoute et la relation client sont privilégiées.</p>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-xl">
+            <div class="text-4xl mb-4">🏞️</div>
+            <h3 class="text-lg font-bold text-on-surface mb-3">Valeur Parc Naturel Régional</h3>
+            <p class="text-sm text-on-surface-variant">Nous favorisons la convivialité et la sécurité du groupe afin de garantir une prestation de qualité.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="py-32 px-8 bg-surface-container-low">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tighter leading-none mb-12">VOTRE CONTACT</h2>
+        <div class="bg-surface-container-lowest p-12 rounded-xl">
+            <p class="text-lg text-on-surface mb-2"><strong>Geoffroy Detrousselle</strong></p>
+            <p class="text-on-surface-variant mb-6">Gérant de SpidR • Co-organisateur</p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="tel:+33625657743" class="flex items-center gap-2 text-primary font-semibold hover:text-surface-tint transition-colors">
+                    <span class="material-symbols-outlined">call</span>
+                    <span>+33 6 25 65 77 43</span>
+                </a>
+                <a href="mailto:geoffroy@spidr.fr" class="flex items-center gap-2 text-primary font-semibold hover:text-surface-tint transition-colors">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span>geoffroy@spidr.fr</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Final -->
+<section id="inscription" class="py-32 px-8 flex flex-col items-center text-center bg-surface">
+    <div class="max-w-3xl">
+        <p class="font-label text-primary font-bold tracking-[0.4em] mb-6 uppercase">Rejoignez l'aventure</p>
+        <h2 class="text-5xl md:text-7xl font-black text-on-background tracking-tighter mb-8 leading-none">
+            PRÊT À VIVRE CETTE AVENTURE ?
+        </h2>
+        <p class="font-body text-xl text-on-surface-variant mb-4">
+            Rejoignez-nous pour 5 jours inoubliables sur le Chemin des Bonshommes
+        </p>
+        <p class="font-headline text-2xl font-bold text-primary mb-12">Du 7 au 11 juin 2026</p>
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+            <a href="mailto:geoffroy@spidr.fr?subject=Réservation Etikotrek Master Mind" class="bg-primary text-on-primary px-12 py-6 rounded-xl font-headline font-black text-xl hover:bg-surface-tint transition-all inline-flex items-center justify-center gap-3">
+                RÉSERVER MA PLACE
+                <span class="material-symbols-outlined">send</span>
+            </a>
+            <a href="https://cal.com/geoffroy-detrousselle/meet-spidr" target="_blank" class="border-2 border-outline-variant text-on-surface px-12 py-6 rounded-xl font-headline font-black text-xl hover:bg-surface-container transition-all inline-flex items-center justify-center gap-3">
+                NOUS CONTACTER
+                <span class="material-symbols-outlined">calendar_month</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-stone-100 flex flex-col md:flex-row justify-between items-center gap-8 w-full border-t border-stone-200 py-12 px-8">
+    <div>
+        <div class="font-headline font-bold text-lg text-stone-900 mb-2">Etikotrek, le Master Mind</div>
+        <p class="font-body text-xs text-stone-500">Geoffroy Detrousselle - SpidR</p>
+        <p class="font-body text-xs text-stone-500">+33 6 25 65 77 43 • geoffroy@spidr.fr</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8">
+        <a class="font-body text-xs tracking-widest uppercase text-stone-500 hover:text-surface-tint transition-colors" href="#programme">Programme</a>
+        <a class="font-body text-xs tracking-widest uppercase text-stone-500 hover:text-surface-tint transition-colors" href="#guides">Guides</a>
+        <a class="font-body text-xs tracking-widest uppercase text-stone-500 hover:text-surface-tint transition-colors" href="#tarifs">Tarifs</a>
+    </div>
+</footer>
 
 </body>
 </html>

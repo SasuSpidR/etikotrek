@@ -78,19 +78,50 @@
         }
         body { font-family: 'Work Sans', sans-serif; }
         h1, h2, h3 { font-family: 'Epilogue', sans-serif; }
+
+        /* Mobile menu */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-background">
 
 <!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full flex justify-between items-center px-8 py-4 max-w-full bg-surface/70 backdrop-blur-md z-50">
-    <div class="font-headline font-black text-2xl text-on-surface">ETIKOTREK</div>
-    <nav class="hidden md:flex gap-8 items-center">
-        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#programme">Programme</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#guides">Guides</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#tarifs">Tarifs</a>
+<header class="fixed top-0 w-full bg-surface/70 backdrop-blur-md z-50">
+    <div class="flex justify-between items-center px-8 py-4">
+        <div class="font-headline font-black text-2xl text-on-surface">ETIKOTREK</div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#programme">Programme</a>
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#guides">Guides</a>
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#tarifs">Tarifs</a>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <a href="#inscription" class="hidden md:block bg-primary text-white px-6 py-2 rounded-md font-headline font-bold text-sm transition-transform active:scale-95 hover:bg-primary-container">Réserver</a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-on-surface" aria-label="Menu">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden">
+        <div class="flex flex-col gap-4 px-8 pb-6 bg-surface/95 backdrop-blur-md border-t border-outline-variant/20">
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors py-2" href="#programme" onclick="closeMobileMenu()">Programme</a>
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors py-2" href="#guides" onclick="closeMobileMenu()">Guides</a>
+            <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface-variant hover:text-on-surface transition-colors py-2" href="#tarifs" onclick="closeMobileMenu()">Tarifs</a>
+            <a href="#inscription" class="bg-primary text-white px-6 py-3 rounded-md font-headline font-bold text-sm text-center transition-transform active:scale-95 hover:bg-primary-container mt-2" onclick="closeMobileMenu()">Réserver</a>
+        </div>
     </nav>
-    <a href="#inscription" class="bg-primary text-white px-6 py-2 rounded-md font-headline font-bold text-sm transition-transform active:scale-95 hover:bg-primary-container">Réserver</a>
 </header>
 
 <main class="pt-20">
@@ -870,6 +901,24 @@
         <a class="font-body text-xs tracking-widest uppercase text-stone-500 hover:text-surface-tint transition-colors" href="#tarifs">Tarifs</a>
     </div>
 </footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        const icon = mobileMenuButton.querySelector('.material-symbols-outlined');
+        icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+    });
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        const icon = mobileMenuButton.querySelector('.material-symbols-outlined');
+        icon.textContent = 'menu';
+    }
+</script>
 
 </body>
 </html>
